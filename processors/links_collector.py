@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 import pandas as pd
-from transformers.base_transformer import BaseTransformer
+from processors.base_transformer import BaseTransformer
 class LinksCollector(BaseTransformer):
     
     def __init__(self):

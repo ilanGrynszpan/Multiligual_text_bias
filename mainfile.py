@@ -1,7 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
-from transformers.links_collector import LinksCollector
-from transformers.word_freq import WordFreqTransformer
+from processors.links_collector import LinksCollector
+from processors.sentiment_analysis import SentimentAnalysisTransformer
+from processors.word_freq import WordFreqTransformer
 
 searches = open("input/searches.csv", "r").read().split(',')
 
@@ -19,16 +20,8 @@ def run(searches):
         ]
         wf = WordFreqTransformer()
         lc = LinksCollector()
-        transformers = [wf, lc]
+        sa = SentimentAnalysisTransformer()
+        transformers = [sa]
         [transformer.transform(soup, output_path) for transformer, output_path in zip(transformers, output_paths)]
 
 run(searches)
-
-response = requests.get(
-    url="https://en.wikipedia.org/wiki/"+'democracy',
-)
-
-soup = BeautifulSoup(response.content, 'html.parser')
-
-transformer = WordFreqTransformer()
-transformer.transform(soup, "output/"+'democracy'+"_word_freq.csv")

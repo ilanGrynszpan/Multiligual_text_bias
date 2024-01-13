@@ -6,7 +6,7 @@ import re
 import pandas as pd
 from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk.stem import WordNetLemmatizer
-from transformers.base_transformer import BaseTransformer
+from processors.base_transformer import BaseTransformer
 nltk.download('stopwords')
 nltk.download('punkt')
 nltk.download('wordnet')
