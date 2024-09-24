@@ -46,7 +46,7 @@ class WordPreprocessor:
             self.sentences[self.sentences.index(sent)] = " ".join(new_sent)
 
     def lemmatize(self):
-        new_setnencces = []
+        new_sentences = []
         for sent in self.sentences:
             words = [x for x in sent.split()]
             new_sent = []
