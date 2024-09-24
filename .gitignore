@@ -1,2 +1,8 @@
 
+# Visual Studio Code internals
+
 /.vscode
+
+# Virtual Environment
+
+/venv

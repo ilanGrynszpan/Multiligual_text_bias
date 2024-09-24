@@ -1,3 +1,16 @@
+from nltk.tokenize import sent_tokenize
+import nltk
+
+nltk.download("punkt")
+nltk.download("stopwords")
+from nltk.corpus import stopwords
+import gensim
+import gensim.corpora as corpora
+from openai import OpenAI
+import seaborn as sns
+import pandas as pd
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
 
 
 class TopicModeller:
